@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from "react"
-import Confetti from 'react-confetti'
 
 export async function getServerSideProps({ query }) {
   let { objetive=1000, count=0, title='', timer=0 } = query
@@ -40,11 +39,6 @@ export default function App({ queries }) {
 	
 	return (
 		<main className="flex dark:bg-gray-800 w-screen h-screen">
-			<Confetti
-        width={1500}
-        height={1500}
-				numberOfPieces={count == objetive ? 200 : 0}
-      />
 			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 left-24 text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
 			  setText(text.target.value)
 			  save(currentText, count, objetive)
