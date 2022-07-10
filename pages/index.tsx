@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from "react"
 import Confetti from 'react-confetti'
-import { useWindowDimensions } from "window-dimensions-hooks";
+import {
+  useWindowSize,
+} from '@react-hook/window-size'
 
 export async function getServerSideProps({ query }) {
   let { objetive=1000, count=0, title='', timer=0 } = query
@@ -22,7 +24,7 @@ export async function getServerSideProps({ query }) {
 																														
 export default function App({ queries }) {
 	const router = useRouter()
-	const { width, height } = useWindowDimensions()
+	const { width, height } = useWindowSize()
 	
 	function save(title, count, objetive, timer) {
 	  router.push(
