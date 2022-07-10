@@ -24,7 +24,7 @@ export async function getServerSideProps({ query }) {
 																														
 export default function App({ queries }) {
 	const router = useRouter()
-	const { width, height } = useWindowSize()
+	const [width, height] = useWindowSize()
 	
 	function save(title, count, objetive, timer) {
 	  router.push(
