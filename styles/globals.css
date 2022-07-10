@@ -4,6 +4,7 @@
 
 * {
   overflow: hiiden;
+  box-sizing: border-box;
 }
 
 button {
