@@ -21,6 +21,10 @@ export default function App({ queries }) {
 	const router = useRouter()
 	
 	function save(title, count, objetive) {
+          if(objetive == count) {
+            setObjetive(state => state + 100)
+          }
+
 	  router.push(
 	  {
 		  query: {
