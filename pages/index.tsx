@@ -21,10 +21,6 @@ export default function App({ queries }) {
 	const router = useRouter()
 	
 	function save(title, count, objetive) {
-          if(objetive == count) {
-            setObjetive(state => state + 100)
-          }
-
 	  router.push(
 	  {
 		  query: {
@@ -50,6 +46,10 @@ export default function App({ queries }) {
 			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center text-5xl font-extrabold top-1/3 left-[7.5rem] absolute" placeholder="Number" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
 			    setCount(text.target.value)
+                            if(objetive == count) {
+                              setObjetive(state => state + 100)
+                            }
+
 					save(currentText, count + 1, objetive)
 		    }
 		  }} value={count}></input>
