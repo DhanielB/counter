@@ -40,7 +40,10 @@ export default function App({ queries }) {
 	
 	return (
 		<main className="flex dark:bg-gray-800 w-screen h-screen">
-                        <Confetti numberOfPieces={count == objetive ? 200  : 0}/>
+                        {count === objetive ?
+                          <Confetti/>
+                            :
+                          null
 			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 left-24 text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
 			  setText(text.target.value)
 			  save(currentText, count, objetive)
