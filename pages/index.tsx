@@ -43,7 +43,7 @@ export default function App({ queries }) {
                         {count === objetive ?
                           <Confetti/>
                             :
-                          null
+                          null}
 			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 left-24 text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
 			  setText(text.target.value)
 			  save(currentText, count, objetive)
