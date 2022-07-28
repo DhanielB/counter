@@ -1,9 +1,7 @@
-import { useRouter } from 'next/router'
 import Confetti from 'react-confetti'
 import React, { useState, useEffect } from "react"
 																											
 export default function App() {
-	const router = useRouter()
         const [objetive, setObjetive] = useState('1000')
 	const [currentText, setText] = useState('')
 	const [count, setCount] = useState('0')
@@ -33,15 +31,15 @@ export default function App() {
                            :
                           null
                         }
-			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 left-24 text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
+			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 left-1/2 text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
 			  setText(text.target.value)
 			}} value={currentText}></input>
-			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center text-5xl font-extrabold top-1/3 left-[7.5rem] absolute" placeholder="Number" onChange={(text) => {
+			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center text-5xl font-extrabold top-1/3 left-1/2 absolute" placeholder="Number" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
 			    setCount(text.target.value)
 		          }
 		  }} value={count}></input>
-			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center font-extrabold top-[19rem] left-[7.5rem] absolute" placeholder="Objetive" onChange={(text) => {
+			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center font-extrabold top-[19rem] left-1/2 absolute" placeholder="Objetive" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
 			    setObjetive(text.target.value)
 		          }
