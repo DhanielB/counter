@@ -25,8 +25,6 @@ export default function App() {
         useEffect(() => {
             window.localStorage.setItem('count', count);
         }, [count]);
-
-
 	
 	return (
 		<main className="flex dark:bg-gray-800 w-screen h-screen">
@@ -42,24 +40,19 @@ export default function App() {
 			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center text-5xl font-extrabold top-1/3 left-[7.5rem] absolute" placeholder="Number" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
 			    setCount(text.target.value)
-                     
-					save(currentText, count + 1, objetive)
-		    }
+		          }
 		  }} value={count}></input>
 			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center font-extrabold top-[19rem] left-[7.5rem] absolute" placeholder="Objetive" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
 			    setObjetive(text.target.value)
-					save(currentText, count + 1, objetive)
-		    }
+		          }
 		  }} value={objetive}></input>
 
 			<button className="bottom-0 w-1/2 h-1/4 bg-green-500 fixed" onClick={() => {
 			  setCount(parseInt(count) + 1)
-			  save(currentText, count + 1, objetive)
 			}}>Add</button>
 			<button className="right-0 bottom-0 w-1/2 h-1/4 bg-red-500 fixed" onClick={() => {
 			  setCount(parseInt(count) - 1)
-			  save(currentText, count + 1, objetive)
 			}}>Remove</button>
 		</main>
 	)
