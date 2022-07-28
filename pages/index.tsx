@@ -1,42 +1,32 @@
 import { useRouter } from 'next/router'
 import Confetti from 'react-confetti'
 import React, { useState, useEffect } from "react"
-
-export async function getServerSideProps({ query }) {
-  let { objetive=1000, count=0, title='', timer=0 } = query
-	
-	const queries = {
-		count,
-		objetive,
-	        title
-	}
-	
-	return {
-		props: {
-			queries
-		}
-	}
-}
-																														
-export default function App({ queries }) {
+																											
+export default function App() {
 	const router = useRouter()
-	
-	function save(title, count, objetive) {
-	  router.push(
-	  {
-		  query: {
-		    title,
-		    count,
-		    objetive
-  	  }
-	  }, undefined, {
-		  shallow: true
-	  })
-  }
+        const [objetive, setObjetive] = useState(1000)
+	const [currentText, setText] = useState('')
+	const [count, setCount] = useState(0)
 
-	const [objetive, setObjetive] = useState(queries.objetive)
-	const [currentText, setText] = useState(queries.title)
-	const [count, setCount] = useState(queries.count)
+        useEffect(() => {
+            setText(JSON.parse(window.localStorage.getItem('text')));
+            setObjetive(JSON.parse(window.localStorage.getItem('objetive')));
+            setCount(JSON.parse(window.localStorage.getItem('count')));
+        }, []);
+
+        useEffect(() => {
+            window.localStorage.setItem('text', currentText);
+        }, [currentText]);
+
+        useEffect(() => {
+            window.localStorage.setItem('objetive', objetive);
+        }, [objetive]);
+
+        useEffect(() => {
+            window.localStorage.setItem('count', count);
+        }, [count]);
+
+
 	
 	return (
 		<main className="flex dark:bg-gray-800 w-screen h-screen">
