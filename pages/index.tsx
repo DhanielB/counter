@@ -9,9 +9,9 @@ export default function App() {
 	const [count, setCount] = useState('0')
 
         useEffect(() => {
-            setText(window.localStorage.getItem('text').toString());
-            setObjetive(window.localStorage.getItem('objetive').toString());
-            setCount(window.localStorage.getItem('count').toString());
+            setText(window.localStorage.getItem('text'));
+            setObjetive(window.localStorage.getItem('objetive'));
+            setCount(window.localStorage.getItem('count'));
         }, []);
 
         useEffect(() => {
