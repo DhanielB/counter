@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react"
 																											
 export default function App() {
 	const router = useRouter()
-        const [objetive, setObjetive] = useState(1000)
+        const [objetive, setObjetive] = useState('1000')
 	const [currentText, setText] = useState('')
-	const [count, setCount] = useState(0)
+	const [count, setCount] = useState('0')
 
         useEffect(() => {
             setText(window.localStorage.getItem('text').toString());
