@@ -48,10 +48,10 @@ export default function App() {
 		  }} value={objetive}></input>
 
 			<button className="bottom-0 w-1/2 h-1/4 bg-green-500 fixed" onClick={() => {
-			  setCount(parseInt(count) + 1)
+			  setCount((parseInt(count) + 1).toString())
 			}}>Add</button>
 			<button className="right-0 bottom-0 w-1/2 h-1/4 bg-red-500 fixed" onClick={() => {
-			  setCount(parseInt(count) - 1)
+			  setCount((parseInt(count) - 1).toString())
 			}}>Remove</button>
 		</main>
 	)
