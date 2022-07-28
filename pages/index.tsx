@@ -35,7 +35,6 @@ export default function App() {
                         }
 			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 left-24 text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
 			  setText(text.target.value)
-			  save(currentText, count, objetive)
 			}} value={currentText}></input>
 			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center text-5xl font-extrabold top-1/3 left-[7.5rem] absolute" placeholder="Number" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
