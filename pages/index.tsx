@@ -9,21 +9,21 @@ export default function App() {
 	const [count, setCount] = useState(0)
 
         useEffect(() => {
-            setText(JSON.parse(window.localStorage.getItem('text')));
-            setObjetive(JSON.parse(window.localStorage.getItem('objetive')));
-            setCount(JSON.parse(window.localStorage.getItem('count')));
+            setText(window.localStorage.getItem('text').toString());
+            setObjetive(window.localStorage.getItem('objetive').toString());
+            setCount(window.localStorage.getItem('count').toString());
         }, []);
 
         useEffect(() => {
-            window.localStorage.setItem('text', currentText);
+            window.localStorage.setItem('text', currentText.toString());
         }, [currentText]);
 
         useEffect(() => {
-            window.localStorage.setItem('objetive', objetive);
+            window.localStorage.setItem('objetive', objetive.toString());
         }, [objetive]);
 
         useEffect(() => {
-            window.localStorage.setItem('count', count);
+            window.localStorage.setItem('count', count.toString());
         }, [count]);
 	
 	return (
