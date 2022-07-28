@@ -15,15 +15,15 @@ export default function App() {
         }, []);
 
         useEffect(() => {
-            window.localStorage.setItem('text', currentText.toString());
+            window.localStorage.setItem('text', currentText);
         }, [currentText]);
 
         useEffect(() => {
-            window.localStorage.setItem('objetive', objetive.toString());
+            window.localStorage.setItem('objetive', objetive);
         }, [objetive]);
 
         useEffect(() => {
-            window.localStorage.setItem('count', count.toString());
+            window.localStorage.setItem('count', count);
         }, [count]);
 	
 	return (
