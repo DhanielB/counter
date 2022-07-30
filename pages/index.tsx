@@ -26,7 +26,7 @@ export default function App() {
 	
 	return (
 		<main className="flex dark:bg-gray-800 w-screen h-screen">
-                        {count || '0' == objetive || '1000' ?
+                        {count == objetive ?
                           <Confetti/>
                            :
                           null
