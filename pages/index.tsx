@@ -31,15 +31,15 @@ export default function App() {
                            :
                           null
                         }
-			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 content-center text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
+			<input className="outline-none font-bold text-gray-500 dark:text-gray-300 bg-transparent top-1/4 left-24 text-center absolute" type="text" placeholder="Counter Name" onChange={(text) => {
 			  setText(text.target.value)
 			}} value={currentText}></input>
-			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center text-5xl font-extrabold top-1/3 content-center absolute" placeholder="Number" onChange={(text) => {
+			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center text-5xl font-extrabold top-1/3 left-[7.5rem] absolute" placeholder="Number" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
 			    setCount(text.target.value)
 		          }
 		  }} value={count}></input>
-			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center font-extrabold top-[19rem] content-center absolute" placeholder="Objetive" onChange={(text) => {
+			<input type="number" className="outline-none bg-transparent w-48 dark:text-gray-400 text-center font-extrabold top-[19rem] left-[7.5rem] absolute" placeholder="Objetive" onChange={(text) => {
 			  if((text.target.value.length - 1) < 5) {
 			    setObjetive(text.target.value)
 		          }
